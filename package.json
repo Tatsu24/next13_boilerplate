@@ -8,6 +8,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+    "npm": "please_use_pnpm_instead",
+    "yarn": "please_use_pnpm_instead",
+    "pnpm": ">=8.0.0"
+  },
   "dependencies": {
     "@types/node": "20.3.3",
     "@types/react": "18.2.14",

@@ -2,13 +2,13 @@ pre-push:
   parallel: true
   commands:
     build:
-      run: pnpm build
+      run: yarn build
 
 pre-commit:
   parallel: true
   commands:
     check:
-      run: pnpm check && git add {staged_files}
+      run: yarn check && git add {staged_files}
 
 commit-msg:
   commands:

@@ -6,28 +6,23 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "check": "run-p check:*",
+    "check": "run-p 'check:*'",
     "check:lint": "next lint",
     "check:tsc": "tsc --noEmit",
     "check:format": "prettier --check --write './src/**/*.{js,jsx,ts,tsx}'",
+    "test:unit": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "engines": {
-    "npm": "please_use_pnpm_instead",
-    "yarn": "please_use_pnpm_instead",
-    "pnpm": ">=8.0.0"
+    "yarn": ">=3.0.0",
+    "npm": "please_use_yarn_instead",
+    "pnpm": "please_use_yarn_instead"
   },
   "dependencies": {
-    "@types/node": "20.3.3",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
-    "eslint": "8.44.0",
-    "eslint-config-next": "13.4.7",
     "next": "13.4.7",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
@@ -41,12 +36,31 @@
     "@storybook/nextjs": "^7.0.25",
     "@storybook/react": "^7.0.25",
     "@storybook/testing-library": "^0.2.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.5.2",
+    "@types/node": "20.3.3",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "@types/testing-library__jest-dom": "^5.14.7",
+    "eslint": "8.44.0",
+    "eslint-config-next": "13.4.7",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.2",
+    "eslint-plugin-jest-dom": "^5.0.1",
     "eslint-plugin-storybook": "^0.6.12",
+    "eslint-plugin-testing-library": "^5.11.0",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.0.0",
-    "storybook": "^7.0.25"
-  }
+    "storybook": "^7.0.25",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "5.1.6"
+  },
+  "packageManager": "yarn@3.6.1"
 }

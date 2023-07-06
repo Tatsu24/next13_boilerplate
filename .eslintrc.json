@@ -6,7 +6,7 @@
     "prettier",
     "plugin:storybook/recommended"
   ],
-  "plugins": ["unused-imports"],
+  "plugins": ["import", "unused-imports", "jest", "jest-dom", "storybook", "testing-library"],
   "rules": {
     "no-console": [
       "warn",
@@ -26,6 +26,8 @@
     "import/first": "error",
     "import/newline-after-import": "error",
     "unused-imports/no-unused-imports": "error",
-    "@typescript-eslint/no-unused-vars": "off"
+    "@typescript-eslint/no-unused-vars": "off",
+    "jest/consistent-test-it": ["warn", { "fn": "test" }],
+    "jest/require-top-level-describe": ["warn"]
   }
 }

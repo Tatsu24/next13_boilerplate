@@ -20,7 +20,7 @@
     "pnpm": "please_use_yarn_instead"
   },
   "dependencies": {
-    "next": "13.4.7",
+    "next": "13.4.8",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -45,7 +45,7 @@
     "@types/react-dom": "18.2.6",
     "@types/testing-library__jest-dom": "^5.14.7",
     "eslint": "8.44.0",
-    "eslint-config-next": "13.4.7",
+    "eslint-config-next": "13.4.8",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.2",

@@ -1,0 +1,37 @@
+name: 'CI'
+description: Setup Node.js Action
+
+runs:
+  using: composite
+  steps:
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: ./.node-version
+        cache: 'yarn'
+    - name: Check Node.js version
+      run: node --version
+      shell: bash
+
+    - name: Check Yarn version
+      id: yarn-version
+      run: |
+        version=$(yarn -v)
+        hashed_version=$(echo -n $version | sha256sum)
+        echo "hashed_version=${hashed_version}" >> $GITHUB_OUTPUT
+      shell: bash
+
+    - uses: actions/cache@v3
+      id: yarn-cache
+      with:
+        path: node_modules
+        # node version の変更により node_modules が変わる可能性があるためキーに入れる
+        key: ${{ runner.os }}-node-${{ steps.yarn-version.outputs.hashed_version }}-${{ hashFiles('**/package-lock.json') }}
+    - name: Install dependencies
+      run: |
+        if [ "${{ steps.yarn-cache.outputs.cache-hit }}" = "true" ]; then
+          echo "skip yarn install"
+        else
+          yarn install --immutable
+        fi
+      shell: bash

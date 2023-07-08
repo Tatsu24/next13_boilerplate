@@ -1,20 +1,20 @@
 import nextJest from 'next/jest.js';
 
 const createJestConfig = nextJest({
-  dir: './',
+  dir: './'
 });
 
 /** @type {import('jest').Config} */
 const customJestConfig = {
   testEnvironment: 'jest-environment-jsdom',
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.mjs'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.mjs']
 };
 
 async function jestConfig() {
   const nextJestConfig = await createJestConfig(customJestConfig)();
   return {
     ...nextJestConfig,
-    transformIgnorePatterns: [`/node_modules/(?!${[''].join('|')})`],
+    transformIgnorePatterns: [`/node_modules/(?!${[''].join('|')})`]
   };
 }
 

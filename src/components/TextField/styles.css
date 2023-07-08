@@ -1,0 +1,21 @@
+.text-field {
+  width: 100%;
+  height: 35px;
+  padding: 0 12px;
+  border: 1px solid #666;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+}
+
+.text-field:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.text-field[data-error='true'] {
+  border-color: #fd1215;
+  background-color: #ffdbdc;
+  outline: none;
+}

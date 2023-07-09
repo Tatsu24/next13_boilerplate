@@ -1,0 +1,19 @@
+pre-push:
+  parallel: true
+  commands:
+    build:
+      run: yarn build
+
+pre-commit:
+  parallel: true
+  commands:
+    check:
+      run: yarn check && git add {staged_files}
+
+commit-msg:
+  commands:
+    commitlint:
+      run: npx commitlint -e
+    emojis:
+      depends_on: commitlint
+      run: node lib/addEmojis.js

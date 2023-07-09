@@ -1,22 +1,14 @@
-import { useState } from 'react';
 import './styles.css';
 
 export type TextFieldProps = {
   isError?: boolean;
-};
+} & JSX.IntrinsicElements['input'];
 
-export const TextField: React.FC<TextFieldProps> = ({ isError }) => {
-  const [text, setText] = useState('');
-  const handlerChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setText(event.target.value);
-  };
-  return (
-    <input
-      className='text-field'
-      type='text'
-      value={text}
-      data-error={isError}
-      onChange={handlerChange}
-    />
-  );
+export const TextField: React.FC<TextFieldProps> = ({
+  type = 'text',
+  value,
+  isError,
+  ...props
+}) => {
+  return <input {...props} className='text-field' type={type} value={value} data-error={isError} />;
 };

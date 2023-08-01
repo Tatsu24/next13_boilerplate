@@ -26,7 +26,7 @@ runs:
       with:
         path: node_modules
         # node version の変更により node_modules が変わる可能性があるためキーに入れる
-        key: ${{ runner.os }}-node-${{ steps.yarn-version.outputs.hashed_version }}-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-node-${{ steps.yarn-version.outputs.hashed_version }}-${{ hashFiles('**/yarn.lock') }}
     - name: Install dependencies
       run: |
         if [ "${{ steps.yarn-cache.outputs.cache-hit }}" = "true" ]; then

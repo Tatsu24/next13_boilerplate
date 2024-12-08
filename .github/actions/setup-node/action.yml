@@ -21,7 +21,7 @@ runs:
         echo "hashed_version=${hashed_version}" >> $GITHUB_OUTPUT
       shell: bash
 
-    - uses: actions/cache@v3
+    - uses: actions/cache@v4
       id: yarn-cache
       with:
         path: node_modules
